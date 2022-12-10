@@ -13,21 +13,21 @@ int main(void)
 
 {
 	int n;
-	int lastn;
+	int num;
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-	last = n % 10;
+	num = n % 10;
 
-	if (last > 5)
+	if (num > 5)
 	{
-		printf("last digit of %d is greater than 5\n", n, lastn);
-	} else if (last == 0)
+		printf("%d and is greater than 5\n", num);
+	} else if ((num < 6) && (num < 0))
 	{
-		printf("last digit of %d is 0\n", n, lastn);
+		printf("%d and is less than 6and no 0\n", num);
 	} else
 	{
-		printf("last digit of %d is less than 6 and not 0\n", n, lastn);
+		printf("%d is 0\n", num);
 	}
 	return (0);
 }
