@@ -1,5 +1,5 @@
-#ifndef _HOLBERTON_H_
-#define _HOLBERTON_H_
+#ifndef MAIN_H
+#define MAIN_H
 /**
  * print_number- prints a number
  * @n: number to print to character
@@ -10,20 +10,20 @@ void print_number(int n);
  * @s: string to convert to rot13
  * Return: returns a char
  */
-char *rot13(char *s);
+char *rot13(char *);
 /**
  * leet - switches characters to 1337
  * @s: string to switch
  *
  * Return: returns character
  */
-char *leet(char *s);
+char *leet(char *);
 /**
  * cap_string - string to capitalize;
  * @s: string to capitalize
  * Return: return the string
  */
-char *cap_string(char *s);
+char *cap_string(char *);
 /**
  * string_toupper - makes lower to upper
  * @s: character to make upper
