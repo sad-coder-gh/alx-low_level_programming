@@ -1,25 +1,32 @@
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
-#include "main.h"
+#include "lists.h"
 
 /**
  * main - check the code
- *
+ * 
  * Return: Always 0.
  */
 int main(void)
 {
-    unsigned int n;
+    listint_t *head;
+    listint_t *new;
+    listint_t hello = {8, NULL};
+    size_t n;
 
-    n = binary_to_uint("1");
-    printf("%u\n", n);
-    n = binary_to_uint("101");
-    printf("%u\n", n);
-    n = binary_to_uint("1e01");
-    printf("%u\n", n);
-    n = binary_to_uint("1100010");
-    printf("%u\n", n);
-    n = binary_to_uint("0000000000000000000110010010");
-    printf("%u\n", n);
+    head = &hello;
+    new = malloc(sizeof(listint_t));
+    if (new == NULL)
+    {
+        printf("Error\n");
+        return (1);
+    }
+    new->n = 9;
+    new->next = head;
+    head = new;
+    n = print_listint(head);
+    printf("-> %lu elements\n", n);
+    free(new);
     return (0);
 }
-

@@ -1,5 +1,7 @@
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
-#include "main.h"
+#include "lists.h"
 
 /**
  * main - check the code
@@ -8,15 +10,19 @@
  */
 int main(void)
 {
-    unsigned int n;
+    listint_t *head;
 
-    n = flip_bits(1024, 1);
-    printf("%u\n", n);
-    n = flip_bits(402, 98);
-    printf("%u\n", n);
-    n = flip_bits(1024, 3);
-    printf("%u\n", n);
-    n = flip_bits(1024, 1025);
-    printf("%u\n", n);
+    head = NULL;
+    add_nodeint_end(&head, 0);
+    add_nodeint_end(&head, 1);
+    add_nodeint_end(&head, 2);
+    add_nodeint_end(&head, 3);
+    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 98);
+    add_nodeint_end(&head, 402);
+    add_nodeint_end(&head, 1024);
+    print_listint(head);
+    free_listint2(&head);
+    printf("%p\n", (void *)head);
     return (0);
 }

@@ -1,5 +1,7 @@
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
-#include "main.h"
+#include "lists.h"
 
 /**
  * main - check the code
@@ -8,17 +10,19 @@
  */
 int main(void)
 {
-    unsigned long int n;
+    listint_t *head;
 
-    n = 1024;
-    clear_bit(&n, 10);
-    printf("%lu\n", n);
-    n = 0;
-    clear_bit(&n, 10);
-    printf("%lu\n", n);
-    n = 98;
-    clear_bit(&n, 1);
-    printf("%lu\n", n);
+    head = NULL;
+    add_nodeint_end(&head, 0);
+    add_nodeint_end(&head, 1);
+    add_nodeint_end(&head, 2);
+    add_nodeint_end(&head, 3);
+    add_nodeint_end(&head, 4);
+    add_nodeint_end(&head, 98);
+    add_nodeint_end(&head, 402);
+    add_nodeint_end(&head, 1024);
+    print_listint(head);
+    free_listint(head);
+    head = NULL;
     return (0);
 }
-
